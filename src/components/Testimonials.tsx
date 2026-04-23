@@ -1,6 +1,6 @@
 // src/components/Testimonials.tsx
+import { FormatQuoteRounded } from "@mui/icons-material";
 import { Box, Container, Typography, Grid } from "@mui/material";
-import { Quote } from "lucide-react";
 
 const reviews = [
   {
@@ -43,11 +43,9 @@ export default function Testimonials() {
           {reviews.map((r, i) => (
             <Grid size={{ xs: 12, md: 4 }} key={i}>
               <Box sx={{ position: "relative", pt: 4 }}>
-                <Quote
-                  size={40}
-                  color="#C9A84C"
+                <FormatQuoteRounded
+                  sx={{ color: "#C9A84C", fontSize: 40 }}
                   style={{
-                    opacity: 0.5,
                     position: "absolute",
                     top: 0,
                     left: 0,

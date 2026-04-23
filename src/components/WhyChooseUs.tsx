@@ -1,27 +1,32 @@
 // src/components/WhyChooseUs.tsx
 "use client";
 import { Box, Container, Typography, Grid, Paper } from "@mui/material";
-import { Target, Scale, Handshake, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import {
+  AssessmentOutlined,
+  BalanceOutlined,
+  GppGoodOutlined,
+  HandshakeOutlined,
+} from "@mui/icons-material";
 
 const reasons = [
   {
-    icon: <Target size={32} />,
+    icon: <AssessmentOutlined sx={{ fontSize: 32 }} />,
     title: "Expert-Led Practice",
     desc: "Guided by a qualified CS with 10+ years of hands-on regulatory experience.",
   },
   {
-    icon: <Scale size={32} />,
+    icon: <BalanceOutlined sx={{ fontSize: 32 }} />,
     title: "Regulatory Precision",
     desc: "Deep expertise in SEBI, MCA, and corporate law frameworks.",
   },
   {
-    icon: <Handshake size={32} />,
+    icon: <HandshakeOutlined sx={{ fontSize: 32 }} />,
     title: "Client-First Approach",
     desc: "Tailored solutions aligned with your business goals.",
   },
   {
-    icon: <ShieldCheck size={32} />,
+    icon: <GppGoodOutlined sx={{ fontSize: 32 }} />,
     title: "Integrity & Independence",
     desc: "Unbiased advisory, free from conflicts of interest.",
   },

@@ -1,5 +1,13 @@
 // src/components/Footer.tsx
 "use client";
+import { CompanyDetails } from "@/utils/constants";
+import {
+  FmdGoodOutlined,
+  LinkedIn,
+  MailOutlineOutlined,
+  PhoneAndroidOutlined,
+  X,
+} from "@mui/icons-material";
 import {
   Box,
   Container,
@@ -9,7 +17,6 @@ import {
   IconButton,
   Divider,
 } from "@mui/material";
-import { Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 
 const quickLinks = [
@@ -44,14 +51,18 @@ export default function Footer() {
             </Typography>
             <Stack direction="row" spacing={1}>
               <IconButton
+                href={CompanyDetails.linkedIn}
+                target="_blank"
                 sx={{ color: "white", "&:hover": { color: "#C9A84C" } }}
               >
-                {/* <Linkedin size={20} /> */}
+                <LinkedIn sx={{ fontSize: 20 }} />
               </IconButton>
               <IconButton
+                href={CompanyDetails.twitter}
+                target="_blank"
                 sx={{ color: "white", "&:hover": { color: "#C9A84C" } }}
               >
-                {/* <Twitter size={20} /> */}
+                <X sx={{ fontSize: 20 }} />
               </IconButton>
             </Stack>
           </Grid>
@@ -100,9 +111,9 @@ export default function Footer() {
                 spacing={2}
                 //   alignItems="center"
               >
-                <Phone size={18} color="#C9A84C" />
+                <PhoneAndroidOutlined sx={{ fontSize: 18, color: "#C9A84C" }} />
                 <Typography variant="body2" sx={{ color: "#6B7280" }}>
-                  +91 98765 43210
+                  {CompanyDetails.phone}
                 </Typography>
               </Stack>
               <Stack
@@ -110,9 +121,9 @@ export default function Footer() {
                 spacing={2}
                 //   alignItems="center"
               >
-                <Mail size={18} color="#C9A84C" />
+                <MailOutlineOutlined sx={{ fontSize: 18, color: "#C9A84C" }} />
                 <Typography variant="body2" sx={{ color: "#6B7280" }}>
-                  contact@firmname.com
+                  {CompanyDetails.email}
                 </Typography>
               </Stack>
               <Stack
@@ -120,15 +131,9 @@ export default function Footer() {
                 spacing={2}
                 //   alignItems="flex-start"
               >
-                <MapPin
-                  size={18}
-                  color="#C9A84C"
-                  style={{ marginTop: "4px" }}
-                />
+                <FmdGoodOutlined sx={{ fontSize: 18, color: "#C9A84C" }} />
                 <Typography variant="body2" sx={{ color: "#6B7280" }}>
-                  Suite 402, Professional Towers,
-                  <br />
-                  Bandra Kurla Complex, Mumbai - 400051
+                  {CompanyDetails.address}
                 </Typography>
               </Stack>
             </Stack>

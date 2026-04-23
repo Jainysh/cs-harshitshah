@@ -5,7 +5,6 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  Button,
   Box,
   IconButton,
   Drawer,
@@ -13,14 +12,24 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
-import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // 👈 not next/router
+import { Close, Menu } from "@mui/icons-material";
 
-const navLinks = ["Home", "Services", "About Us", "Blogs", "Contact Us"];
+const navLinks = [
+  { text: "Home", href: "/" },
+  { text: "Services", href: "/services" },
+  { text: "About Us", href: "/about-us" },
+  { text: "Blogs", href: "/blogs" },
+  { text: "Contact Us", href: "/contact-us" },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -34,6 +43,7 @@ export default function Navbar() {
       elevation={scrolled ? 2 : 0}
       sx={{
         bgcolor: scrolled ? "white" : "transparent",
+        // filter: !scrolled ? "blur(10px) brightness(0.8)" : "none",
         transition: "all 0.3s ease",
         borderBottom: scrolled ? "1px solid #E5E0D8" : "none",
       }}
@@ -43,7 +53,7 @@ export default function Navbar() {
           <Typography
             variant="h5"
             sx={{
-              color: scrolled ? "primary.main" : "white",
+              color: scrolled || !isHomePage ? "primary.main" : "white",
               fontFamily: "Playfair Display",
               fontWeight: 700,
             }}
@@ -65,20 +75,16 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <Box sx={{ display: { xs: "none", md: "flex" }, gap: 4 }}>
           {navLinks.map((link) => (
-            <Link
-              key={link}
-              href={`/${link.toLowerCase().replace(" ", "-")}`}
-              passHref
-            >
+            <Link key={link.text} href={link.href} passHref>
               <Typography
                 sx={{
-                  color: scrolled ? "text.primary" : "white",
+                  color: scrolled || !isHomePage ? "text.primary" : "white",
                   fontSize: "0.9rem",
                   "&:hover": { color: "secondary.main" },
                   transition: "color 0.2s",
                 }}
               >
-                {link}
+                {link.text}
               </Typography>
             </Link>
           ))}
@@ -87,7 +93,7 @@ export default function Navbar() {
         <IconButton
           sx={{
             display: { md: "none" },
-            color: scrolled ? "primary.main" : "white",
+            color: scrolled || !isHomePage ? "primary.main" : "white",
           }}
           onClick={() => setMobileOpen(true)}
         >
@@ -102,12 +108,12 @@ export default function Navbar() {
       >
         <Box sx={{ width: 250, p: 3 }}>
           <IconButton onClick={() => setMobileOpen(false)} sx={{ mb: 2 }}>
-            <X />
+            <Close />
           </IconButton>
           <List>
-            {navLinks.map((text) => (
-              <ListItem key={text} onClick={() => setMobileOpen(false)}>
-                <ListItemText primary={text} />
+            {navLinks.map((link) => (
+              <ListItem key={link.text} onClick={() => setMobileOpen(false)}>
+                <ListItemText primary={link.text} />
               </ListItem>
             ))}
           </List>

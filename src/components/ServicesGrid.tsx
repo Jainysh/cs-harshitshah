@@ -1,43 +1,43 @@
 // src/components/ServicesGrid.tsx
-import { Box, Container, Typography, Grid, Paper } from "@mui/material";
 import {
-  Scale,
-  Briefcase,
-  ShieldCheck,
-  FileText,
-  Landmark,
-} from "lucide-react";
+  ArticleOutlined,
+  AssuredWorkloadOutlined,
+  Diversity3,
+  GppGoodOutlined,
+  WorkOutlineOutlined,
+} from "@mui/icons-material";
+import { Box, Container, Typography, Grid, Paper } from "@mui/material";
 
 const services = [
   {
     title: "SEBI Regulatory Advisory",
     desc: "Expert guidance for AIF, PMS, and Investment Advisers.",
     size: 8,
-    icon: <Landmark color="#C9A84C" />,
+    icon: <AssuredWorkloadOutlined sx={{ color: "#C9A84C" }} />,
   },
   {
     title: "Corporate Law",
     desc: "Full-cycle secretarial support.",
     size: 4,
-    icon: <Briefcase color="#C9A84C" />,
+    icon: <WorkOutlineOutlined sx={{ color: "#C9A84C" }} />,
   },
   {
     title: "Startup Advisory",
     desc: "From incorporation to funding compliance.",
     size: 4,
-    icon: <Scale color="#C9A84C" />,
+    icon: <Diversity3 sx={{ color: "#C9A84C" }} />,
   },
   {
     title: "Due Diligence",
     desc: "Thorough audits for acquisitions and investments.",
     size: 4,
-    icon: <ShieldCheck color="#C9A84C" />,
+    icon: <GppGoodOutlined sx={{ color: "#C9A84C" }} />,
   },
   {
     title: "Contract Drafting",
     desc: "Vetting and drafting commercial agreements.",
     size: 4,
-    icon: <FileText color="#C9A84C" />,
+    icon: <ArticleOutlined sx={{ color: "#C9A84C" }} />,
   },
 ];
 
