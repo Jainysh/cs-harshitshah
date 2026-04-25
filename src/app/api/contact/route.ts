@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
-    const { name, email, message } = await request.json();
+    const { name, email, message, phone, company } = await request.json();
 
     // Basic validation
     if (!name || !email || !message) {
@@ -16,13 +16,15 @@ export async function POST(request: Request) {
     }
 
     await resend.emails.send({
-      from: "Contact Form <hello@johnsmith.com>", // your friend's domain
+      from: "Enquiry Form <enquiry@csharshitshah.com>", // your friend's domain
       to: process.env.CONTACT_RECEIVER_EMAIL!,
       subject: `New enquiry from ${name}`,
       html: `
-        <h2>New Contact Form Submission</h2>
+        <h2>New Enquiry from csharshitshah.com Webpage</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `,
