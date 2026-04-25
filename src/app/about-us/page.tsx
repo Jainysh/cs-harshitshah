@@ -31,22 +31,22 @@ const expertise = [
 
 const values = [
   {
-    icon: <FlagOutlined sx={{ fontSize: 24 }} />,
+    icon: <FlagOutlined sx={{ fontSize: 30 }} />,
     title: "Client First",
     desc: "Your business priorities are at the heart of everything we do.",
   },
   {
-    icon: <Diamond sx={{ fontSize: 24 }} />,
+    icon: <Diamond sx={{ fontSize: 30 }} />,
     title: "Value Driven",
     desc: "Every engagement is focused on delivering meaningful outcomes.",
   },
   {
-    icon: <GppGoodOutlined sx={{ fontSize: 24 }} />,
+    icon: <GppGoodOutlined sx={{ fontSize: 30 }} />,
     title: "Zero Tolerance",
     desc: "An uncompromising stance on non-compliance.",
   },
   {
-    icon: <CheckCircleOutlineOutlined sx={{ fontSize: 24 }} />,
+    icon: <CheckCircleOutlineOutlined sx={{ fontSize: 30 }} />,
     title: "Integrity & Independence",
     desc: "Honest counsel, free from conflict, every time.",
   },

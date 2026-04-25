@@ -33,6 +33,45 @@ const countryCodes = [
 
 export default function ContactUs() {
   const [countryCode, setCountryCode] = useState("+91");
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+    company: "",
+    phone: "",
+  });
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted with country code:", e.target);
+    setStatus("loading");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "", company: "", phone: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <Box sx={{ pt: 15, pb: 10, bgcolor: "white" }}>
@@ -182,13 +221,16 @@ export default function ContactUs() {
                   Let&apos;s get to know each other
                 </Typography>
 
-                <form onSubmit={(e) => e.preventDefault()}>
+                <form onSubmit={handleSubmit}>
                   <Grid container spacing={3}>
                     <Grid size={{ xs: 12 }}>
                       <TextField
                         fullWidth
                         label="Name"
                         variant="standard"
+                        value={form.name}
+                        onChange={handleChange}
+                        name="name"
                         required
                       />
                     </Grid>
@@ -199,6 +241,9 @@ export default function ContactUs() {
                         label="Email"
                         type="email"
                         variant="standard"
+                        value={form.email}
+                        onChange={handleChange}
+                        name="email"
                         required
                       />
                     </Grid>
@@ -223,6 +268,9 @@ export default function ContactUs() {
                           label="Contact Number"
                           variant="standard"
                           required
+                          name="phone"
+                          value={form.phone}
+                          onChange={handleChange}
                         />
                       </Stack>
                     </Grid>
@@ -230,8 +278,11 @@ export default function ContactUs() {
                     <Grid size={{ xs: 12 }}>
                       <TextField
                         fullWidth
-                        label="Organization Name"
+                        label="Company Name"
                         variant="standard"
+                        value={form.company}
+                        onChange={handleChange}
+                        name="company"
                       />
                     </Grid>
 
@@ -243,12 +294,16 @@ export default function ContactUs() {
                         multiline
                         rows={4}
                         required
+                        value={form.message}
+                        onChange={handleChange}
+                        name="message"
                       />
                     </Grid>
 
                     <Grid size={{ xs: 12 }} sx={{ mt: 2 }}>
                       <Button
                         type="submit"
+                        disabled={status === "loading"}
                         variant="contained"
                         size="large"
                         endIcon={<SendOutlined sx={{ fontSize: 18 }} />}
@@ -260,8 +315,26 @@ export default function ContactUs() {
                           "&:hover": { bgcolor: "secondary.main" },
                         }}
                       >
-                        Submit
+                        {status === "loading" ? "Sending..." : "Submit"}
                       </Button>
+                      {status === "success" && (
+                        <Typography
+                          variant="body2"
+                          color="success.main"
+                          sx={{ mt: 1 }}
+                        >
+                          Message sent! We&apos;ll get back to you soon.
+                        </Typography>
+                      )}
+                      {status === "error" && (
+                        <Typography
+                          variant="body2"
+                          color="error.main"
+                          sx={{ mt: 1 }}
+                        >
+                          Something went wrong. Please try again.
+                        </Typography>
+                      )}
                     </Grid>
                   </Grid>
                 </form>
