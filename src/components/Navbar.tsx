@@ -52,10 +52,12 @@ export default function Navbar() {
         <Box>
           <Typography
             variant="h5"
+            onClick={() => (window.location.href = "/")}
             sx={{
               color: scrolled || !isHomePage ? "primary.main" : "white",
               fontFamily: "Playfair Display",
               fontWeight: 700,
+              cursor: "pointer",
             }}
           >
             CS Harshit Shah<span style={{ color: "#C9A84C" }}>.</span>
