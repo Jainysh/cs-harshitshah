@@ -1,4 +1,3 @@
-// src/components/Testimonials.tsx
 import { FormatQuoteRounded } from "@mui/icons-material";
 import { Box, Container, Typography, Grid } from "@mui/material";
 
@@ -22,52 +21,70 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <Box sx={{ py: 12, bgcolor: "#0F2040", color: "white" }}>
+    <Box sx={{ py: { xs: 6, md: 12 }, bgcolor: "#0F2040", color: "white" }}>
       <Container maxWidth="lg">
         <Typography
           variant="h3"
-          sx={{ mb: 8, textAlign: "center", position: "relative" }}
+          align="center"
+          sx={{
+            mb: { xs: 4, md: 8 },
+            fontSize: { xs: "1.8rem", md: "2.5rem" },
+          }}
         >
           What Our Clients Say
           <Box
             sx={{
-              width: 80,
+              width: 60,
               height: 2,
               bgcolor: "secondary.main",
               mx: "auto",
-              mt: 2,
+              mt: 1.5,
             }}
           />
         </Typography>
-        <Grid container spacing={4}>
+
+        <Grid container spacing={{ xs: 3, md: 4 }}>
           {reviews.map((r, i) => (
-            <Grid size={{ xs: 12, md: 4 }} key={i}>
-              <Box sx={{ position: "relative", pt: 4 }}>
+            <Grid sx={{ xs: 12, md: 4 }} key={i}>
+              <Box
+                sx={{
+                  position: "relative",
+                  pt: { xs: 3, md: 4 },
+                  textAlign: { xs: "center", md: "left" },
+                }}
+              >
                 <FormatQuoteRounded
-                  sx={{ color: "#C9A84C", fontSize: 40 }}
-                  style={{
+                  sx={{
+                    color: "#C9A84C",
+                    fontSize: { xs: 30, md: 40 },
                     position: "absolute",
                     top: 0,
-                    left: 0,
+                    left: { xs: "50%", md: 0 },
+                    transform: { xs: "translateX(-50%)", md: "none" },
                   }}
                 />
+
                 <Typography
                   variant="body1"
                   sx={{
                     mb: 3,
                     fontStyle: "italic",
-                    position: "relative",
-                    zIndex: 1,
+                    fontSize: { xs: "0.9rem", md: "1rem" },
                   }}
                 >
                   {r.text}
                 </Typography>
+
                 <Typography
                   variant="subtitle1"
-                  sx={{ fontWeight: 700, color: "secondary.main" }}
+                  sx={{
+                    fontWeight: 700,
+                    color: "secondary.main",
+                  }}
                 >
                   {r.name}
                 </Typography>
+
                 <Typography variant="caption" sx={{ opacity: 0.7 }}>
                   {r.role}
                 </Typography>

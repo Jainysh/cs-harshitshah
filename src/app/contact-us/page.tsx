@@ -21,6 +21,7 @@ import {
   MailOutlineOutlined,
   PhoneAndroidOutlined,
   SendOutlined,
+  WhatsApp,
 } from "@mui/icons-material";
 import { CompanyDetails } from "@/utils/constants";
 
@@ -86,19 +87,12 @@ export default function ContactUs() {
             >
               <Typography
                 variant="h3"
-                sx={{ mb: 2, fontFamily: "Playfair Display" }}
+                sx={{ mb: 5, fontFamily: "Playfair Display" }}
               >
                 Let&apos;s meet over coffee
               </Typography>
-              <Typography
-                variant="h6"
-                sx={{ color: "secondary.main", mb: 4, fontWeight: 600 }}
-              >
-                {CompanyDetails.tagLine}
-              </Typography>
 
               <Stack spacing={4}>
-                {/* Address - Clickable to Google Maps */}
                 <Box
                   component="a"
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CompanyDetails.address)}`}
@@ -159,6 +153,18 @@ export default function ContactUs() {
 
                 {/* Socials */}
                 <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
+                  <IconButton
+                    component="a"
+                    href={CompanyDetails.whatsapp}
+                    target="_blank"
+                    sx={{
+                      bgcolor: "primary.main",
+                      color: "white",
+                      "&:hover": { bgcolor: "secondary.main" },
+                    }}
+                  >
+                    <WhatsApp />
+                  </IconButton>
                   <IconButton
                     component="a"
                     href={CompanyDetails.linkedIn}

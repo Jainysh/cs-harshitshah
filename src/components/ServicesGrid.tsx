@@ -1,4 +1,3 @@
-// src/components/ServicesGrid.tsx
 import {
   ArticleOutlined,
   AssuredWorkloadOutlined,
@@ -13,49 +12,70 @@ const services = [
     title: "SEBI Regulatory Advisory",
     desc: "Expert guidance for AIF, PMS, and Investment Advisers.",
     size: 8,
-    icon: <AssuredWorkloadOutlined sx={{ color: "#C9A84C" }} />,
+    icon: (
+      <AssuredWorkloadOutlined
+        sx={{ fontSize: { xs: 28, md: 32 }, color: "#C9A84C" }}
+      />
+    ),
   },
   {
     title: "Corporate Law",
     desc: "Full-cycle secretarial support.",
     size: 4,
-    icon: <WorkOutlineOutlined sx={{ color: "#C9A84C" }} />,
+    icon: (
+      <WorkOutlineOutlined
+        sx={{ fontSize: { xs: 28, md: 32 }, color: "#C9A84C" }}
+      />
+    ),
   },
   {
     title: "Startup Advisory",
     desc: "From incorporation to funding compliance.",
     size: 4,
-    icon: <Diversity3 sx={{ color: "#C9A84C" }} />,
+    icon: (
+      <Diversity3 sx={{ fontSize: { xs: 28, md: 32 }, color: "#C9A84C" }} />
+    ),
   },
   {
     title: "Due Diligence",
     desc: "Thorough audits for acquisitions and investments.",
     size: 4,
-    icon: <GppGoodOutlined sx={{ color: "#C9A84C" }} />,
+    icon: (
+      <GppGoodOutlined
+        sx={{ fontSize: { xs: 28, md: 32 }, color: "#C9A84C" }}
+      />
+    ),
   },
   {
     title: "Contract Drafting",
     desc: "Vetting and drafting commercial agreements.",
     size: 4,
-    icon: <ArticleOutlined sx={{ color: "#C9A84C" }} />,
+    icon: (
+      <ArticleOutlined
+        sx={{ fontSize: { xs: 28, md: 32 }, color: "#C9A84C" }}
+      />
+    ),
   },
 ];
 
 export default function ServicesGrid() {
   return (
-    <Box sx={{ py: 10, bgcolor: "background.paper" }}>
+    <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: "background.paper" }}>
       <Container maxWidth="lg">
         <Typography
           variant="h3"
           align="center"
-          sx={{ mb: 6, position: "relative" }}
+          sx={{
+            mb: { xs: 4, md: 6 },
+            fontSize: { xs: "1.8rem", md: "2.5rem" },
+          }}
         >
           Our Services
           <Box
             component="span"
             sx={{
               display: "block",
-              width: 60,
+              width: 50,
               height: 3,
               bgcolor: "secondary.main",
               mx: "auto",
@@ -72,20 +92,34 @@ export default function ServicesGrid() {
                   p: 4,
                   height: "100%",
                   border: "1px solid #E5E0D8",
+                  backgroundColor: "background.default",
                   boxShadow: "none",
                   transition: "all 0.3s ease",
+                  textAlign: { xs: "center", sm: "left" },
                   "&:hover": {
-                    transform: "translateY(-8px)",
+                    transform: { md: "translateY(-8px)" },
                     boxShadow: "0 12px 24px rgba(0,0,0,0.05)",
                     borderColor: "secondary.main",
                   },
                 }}
               >
                 <Box sx={{ mb: 2 }}>{s.icon}</Box>
-                <Typography variant="h6" gutterBottom sx={{ fontWeight: 700 }}>
+
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: { xs: "1rem", md: "1.2rem" },
+                  }}
+                >
                   {s.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ fontSize: { xs: "0.85rem", md: "0.95rem" } }}
+                >
                   {s.desc}
                 </Typography>
               </Paper>

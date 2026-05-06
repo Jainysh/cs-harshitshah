@@ -3,7 +3,7 @@ import HeroCarousel from "@/components/HeroCarousel";
 import WhoWeAre from "@/components/WhoWeAre";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ServicesGrid from "@/components/ServicesGrid";
-import BlogsCarousel from "@/components/BlogsCarousel";
+// import BlogsCarousel from "@/components/BlogsCarousel";
 import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
       <WhoWeAre />
       <WhyChooseUs />
       <ServicesGrid />
-      <BlogsCarousel />
+      {/* <BlogsCarousel /> TODO once blogs are live */}
       <Testimonials />
     </>
   );

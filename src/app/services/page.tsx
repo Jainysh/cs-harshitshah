@@ -1,10 +1,11 @@
 // src/app/services/page.tsx
 "use client";
 import React, { useState } from "react";
-import { Box, Container, Typography, Tabs, Tab } from "@mui/material";
+import { Box, Container, Typography, Tabs, Tab, Grid } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import { servicesData } from "@/data/servicesData";
 import { ServiceSection } from "@/components/ServiceContent";
+import ServiceTile from "@/components/ServiceTile";
 
 export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState(0);
@@ -50,15 +51,30 @@ export default function ServicesPage() {
             transition={{ duration: 0.3 }}
           >
             <Box sx={{ py: 4 }}>
-              {servicesData[activeTab].sections.map((section, idx) => (
-                <ServiceSection
-                  key={idx}
-                  title={section.title}
-                  subtitle={section.subTitle}
-                  description={section.description}
-                  items={section.items}
-                />
-              ))}
+              {servicesData[activeTab].sections.length < 3 ? (
+                servicesData[activeTab].sections.map((section, idx) => (
+                  <ServiceSection
+                    key={idx}
+                    title={section.title}
+                    subtitle={section.subTitle}
+                    description={section.description}
+                    items={section.items}
+                  />
+                ))
+              ) : (
+                <Grid container spacing={{ xs: 2, md: 4 }}>
+                  {servicesData[activeTab].sections.map((section, idx) => (
+                    <Grid size={{ xs: 12, md: 6 }} key={idx}>
+                      <ServiceTile
+                        title={section.title}
+                        description={section.description}
+                        imageUrl={section.imageUrl || ""}
+                        link={section.link || ""}
+                      />
+                    </Grid>
+                  ))}
+                </Grid>
+              )}
             </Box>
           </motion.div>
         </AnimatePresence>

@@ -15,12 +15,13 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // 👈 not next/router
 import { Close, Menu } from "@mui/icons-material";
+import { CompanyDetails } from "@/utils/constants";
 
 const navLinks = [
   { text: "Home", href: "/" },
   { text: "Services", href: "/services" },
   { text: "About Us", href: "/about-us" },
-  { text: "Blogs", href: "/blogs" },
+  // { text: "Blogs", href: "/blogs" },
   { text: "Contact Us", href: "/contact-us" },
 ];
 
@@ -49,29 +50,43 @@ export default function Navbar() {
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between", py: 1 }}>
-        <Box>
-          <Typography
-            variant="h5"
-            onClick={() => (window.location.href = "/")}
-            sx={{
-              color: scrolled || !isHomePage ? "primary.main" : "white",
-              fontFamily: "Playfair Display",
-              fontWeight: 700,
-              cursor: "pointer",
-            }}
-          >
-            CS Harshit Shah<span style={{ color: "#C9A84C" }}>.</span>
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{
-              color: "secondary.main",
-              fontFamily: "Playfair Display",
-              fontWeight: 700,
-            }}
-          >
-            Financial & Corporate Law Advisor
-          </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
+            cursor: "pointer",
+          }}
+          onClick={() => (window.location.href = "/")}
+        >
+          <img
+            src="/logo.png"
+            alt="Logo"
+            style={{ height: 40, marginRight: 8 }}
+          />
+          <Box>
+            <Typography
+              variant="h5"
+              sx={{
+                color: scrolled || !isHomePage ? "primary.main" : "white",
+                fontFamily: "Playfair Display",
+                fontWeight: 700,
+              }}
+            >
+              {CompanyDetails.proprieter}
+              <span style={{ color: "#C9A84C" }}>.</span>
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "secondary.main",
+                fontFamily: "Playfair Display",
+                fontWeight: 700,
+              }}
+            >
+              {CompanyDetails.tagLine}
+            </Typography>
+          </Box>
         </Box>
 
         {/* Desktop Nav */}

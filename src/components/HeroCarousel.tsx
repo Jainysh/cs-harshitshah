@@ -130,17 +130,19 @@ export default function HeroCarousel() {
                   color="secondary"
                   size="large"
                   fullWidth
+                  href="/services"
                   sx={{
                     fontWeight: 600,
                     py: 1.4,
                   }}
                 >
-                  Get Started
+                  Our Services
                 </Button>
                 <Button
                   variant="outlined"
                   size="large"
                   fullWidth
+                  href="/contact-us"
                   sx={{
                     color: "white",
                     borderColor: "white",
@@ -148,7 +150,7 @@ export default function HeroCarousel() {
                     py: 1.4,
                   }}
                 >
-                  Our Services
+                  Reach Us
                 </Button>
               </Stack>
             </Box>

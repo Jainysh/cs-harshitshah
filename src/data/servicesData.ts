@@ -4,6 +4,8 @@ export const servicesData: {
     title: string;
     subTitle?: string;
     description: string;
+    imageUrl?: string;
+    link?: string;
     items: { label: string; subItems: string[] }[] | string[];
   }[];
 }[] = [
@@ -12,6 +14,8 @@ export const servicesData: {
     sections: [
       {
         title: "Investment Advisers (IA)",
+        imageUrl: "/services/ia.jpg",
+        link: "/services/Investment-Advisers",
         subTitle: "(As per SEBI (Investment Advisers) Regulations, 2013)",
         description:
           "Investment Advisers (IAs) are SEBI-registered entity who provides personalized investment advice to clients for a fee; we assist them with seamless registration, robust compliance frameworks, and ongoing regulatory support to ensure fully compliant and efficient operations.",
@@ -59,6 +63,8 @@ export const servicesData: {
       {
         title: "Research Analyst (RA)",
         subTitle: "(As per SEBI (Research Analysts) Regulations, 2014)",
+        imageUrl: "/services/ia.jpg",
+        link: "/services/Investment-Advisers",
         description:
           "Research Analysts (RAs) are SEBI-registered entity who prepares and publish research reports or investment recommendations; we support them with smooth registration, robust compliance frameworks, and ongoing regulatory guidance to ensure accurate, transparent, and compliant research operations",
         items: [
@@ -104,6 +110,8 @@ export const servicesData: {
       {
         title: "Portfolio Management Services (PMS)",
         subTitle: "(As per SEBI (Portfolio Managers) Regulations, 2020)",
+        imageUrl: "/services/ia.jpg",
+        link: "/services/Investment-Advisers",
         description:
           "Portfolio Managers (PMS) are SEBI-registered entity who manages investment portfolios on behalf of clients under discretionary or non-discretionary mandates; we assist them with seamless registration, strong compliance and operational frameworks, and ongoing regulatory support to ensure efficient and fully compliant portfolio management operations.",
         items: [
@@ -142,6 +150,8 @@ export const servicesData: {
       },
       {
         title: "Alternative Investment Funds (AIF)",
+        imageUrl: "/services/ia.jpg",
+        link: "/services/Investment-Advisers",
         subTitle:
           "(As per SEBI (Alternative Investment Funds) Regulations, 2012)",
         description:
@@ -195,6 +205,8 @@ export const servicesData: {
     sections: [
       {
         title: "Company / LLP Formation",
+        imageUrl: "/services/ia.jpg",
+        link: "/services/Investment-Advisers",
         description:
           "We provide end-to-end support for setting up business entities tailored to your strategic and operational needs.",
         items: [
@@ -209,6 +221,8 @@ export const servicesData: {
         title: "Corporate & Secretarial Services",
         description:
           "Our corporate governance services ensure that your entity remains compliant, organized, and audit-ready at all times.",
+        imageUrl: "/services/ia.jpg",
+        link: "/services/Investment-Advisers",
         items: [
           "ROC filings and regulatory compliance management",
           "Maintenance of statutory registers and records",
@@ -221,6 +235,8 @@ export const servicesData: {
         title: "Corporate Transactions",
         description:
           "We provide transaction advisory and execution support for key corporate actions.",
+        imageUrl: "/services/ia.jpg",
+        link: "/services/Investment-Advisers",
         items: [
           "Private Placement of securities",
           "Rights Issue and Bonus Issue",
@@ -231,6 +247,8 @@ export const servicesData: {
       },
       {
         title: "Fundraising Support",
+        imageUrl: "/services/ia.jpg",
+        link: "/services/Investment-Advisers",
         description:
           "We assist businesses in raising capital efficiently while ensuring legal and regulatory compliance.",
         items: [
@@ -243,6 +261,8 @@ export const servicesData: {
       },
       {
         title: "Strike Off & Winding Up",
+        imageUrl: "/services/ia.jpg",
+        link: "/services/Investment-Advisers",
         description:
           "We provide structured and compliant closure solutions for companies and LLPs.",
         items: [
@@ -255,6 +275,8 @@ export const servicesData: {
       },
       {
         title: "Due Diligence",
+        imageUrl: "/services/ia.jpg",
+        link: "/services/Investment-Advisers",
         description:
           "We conduct thorough due diligence to support informed decision-making in investments, mergers, and funding transactions.",
         items: [
