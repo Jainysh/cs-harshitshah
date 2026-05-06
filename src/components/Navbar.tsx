@@ -129,9 +129,11 @@ export default function Navbar() {
           </IconButton>
           <List>
             {navLinks.map((link) => (
-              <ListItem key={link.text} onClick={() => setMobileOpen(false)}>
-                <ListItemText primary={link.text} />
-              </ListItem>
+              <Link key={link.text} href={link.href} passHref style={{ textDecoration: "none", color: "inherit" }}>
+                <ListItem onClick={() => setMobileOpen(false)}>
+                  <ListItemText primary={link.text} />
+                </ListItem>
+              </Link>
             ))}
           </List>
         </Box>

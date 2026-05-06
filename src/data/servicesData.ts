@@ -1,6 +1,7 @@
 export const servicesData: {
   label: string;
   sections: {
+    id: string;
     title: string;
     subTitle?: string;
     description: string;
@@ -13,9 +14,9 @@ export const servicesData: {
     label: "SEBI Regulatory Advisory",
     sections: [
       {
+        id: "investment-advisers-ia",
         title: "Investment Advisers (IA)",
         imageUrl: "/services/ia.jpg",
-        link: "/services/Investment-Advisers",
         subTitle: "(As per SEBI (Investment Advisers) Regulations, 2013)",
         description:
           "Investment Advisers (IAs) are SEBI-registered entity who provides personalized investment advice to clients for a fee; we assist them with seamless registration, robust compliance frameworks, and ongoing regulatory support to ensure fully compliant and efficient operations.",
@@ -61,10 +62,10 @@ export const servicesData: {
         ],
       },
       {
+        id: "research-analyst-ra",
         title: "Research Analyst (RA)",
         subTitle: "(As per SEBI (Research Analysts) Regulations, 2014)",
         imageUrl: "/services/ia.jpg",
-        link: "/services/Investment-Advisers",
         description:
           "Research Analysts (RAs) are SEBI-registered entity who prepares and publish research reports or investment recommendations; we support them with smooth registration, robust compliance frameworks, and ongoing regulatory guidance to ensure accurate, transparent, and compliant research operations",
         items: [
@@ -108,10 +109,10 @@ export const servicesData: {
         ],
       },
       {
+        id: "portfolio-management-services-pms",
         title: "Portfolio Management Services (PMS)",
         subTitle: "(As per SEBI (Portfolio Managers) Regulations, 2020)",
         imageUrl: "/services/ia.jpg",
-        link: "/services/Investment-Advisers",
         description:
           "Portfolio Managers (PMS) are SEBI-registered entity who manages investment portfolios on behalf of clients under discretionary or non-discretionary mandates; we assist them with seamless registration, strong compliance and operational frameworks, and ongoing regulatory support to ensure efficient and fully compliant portfolio management operations.",
         items: [
@@ -149,9 +150,9 @@ export const servicesData: {
         ],
       },
       {
+        id: "alternative-investment-funds-aif",
         title: "Alternative Investment Funds (AIF)",
         imageUrl: "/services/ia.jpg",
-        link: "/services/Investment-Advisers",
         subTitle:
           "(As per SEBI (Alternative Investment Funds) Regulations, 2012)",
         description:
@@ -204,9 +205,9 @@ export const servicesData: {
     label: "CORPORATE LAW ADVISORY",
     sections: [
       {
+        id: "company-llp-formation",
         title: "Company / LLP Formation",
         imageUrl: "/services/ia.jpg",
-        link: "/services/Investment-Advisers",
         description:
           "We provide end-to-end support for setting up business entities tailored to your strategic and operational needs.",
         items: [
@@ -218,11 +219,11 @@ export const servicesData: {
         ],
       },
       {
+        id: "corporate-secretarial-services",
         title: "Corporate & Secretarial Services",
         description:
           "Our corporate governance services ensure that your entity remains compliant, organized, and audit-ready at all times.",
         imageUrl: "/services/ia.jpg",
-        link: "/services/Investment-Advisers",
         items: [
           "ROC filings and regulatory compliance management",
           "Maintenance of statutory registers and records",
@@ -232,11 +233,11 @@ export const servicesData: {
         ],
       },
       {
+        id: "corporate-transactions",
         title: "Corporate Transactions",
         description:
           "We provide transaction advisory and execution support for key corporate actions.",
         imageUrl: "/services/ia.jpg",
-        link: "/services/Investment-Advisers",
         items: [
           "Private Placement of securities",
           "Rights Issue and Bonus Issue",
@@ -246,9 +247,9 @@ export const servicesData: {
         ],
       },
       {
+        id: "fundraising-support",
         title: "Fundraising Support",
         imageUrl: "/services/ia.jpg",
-        link: "/services/Investment-Advisers",
         description:
           "We assist businesses in raising capital efficiently while ensuring legal and regulatory compliance.",
         items: [
@@ -260,9 +261,9 @@ export const servicesData: {
         ],
       },
       {
+        id: "strike-off-winding-up",
         title: "Strike Off & Winding Up",
         imageUrl: "/services/ia.jpg",
-        link: "/services/Investment-Advisers",
         description:
           "We provide structured and compliant closure solutions for companies and LLPs.",
         items: [
@@ -274,9 +275,9 @@ export const servicesData: {
         ],
       },
       {
+        id: "due-diligence",
         title: "Due Diligence",
         imageUrl: "/services/ia.jpg",
-        link: "/services/Investment-Advisers",
         description:
           "We conduct thorough due diligence to support informed decision-making in investments, mergers, and funding transactions.",
         items: [
@@ -294,6 +295,7 @@ export const servicesData: {
     label: "STARTUP ADVISORY",
     sections: [
       {
+        id: "startup-support",
         title: "Startup Support",
         description:
           "We partner with startups through their growth journey by providing strategic, regulatory, and operational support.",
@@ -311,6 +313,7 @@ export const servicesData: {
     label: "OTHER SERVICES",
     sections: [
       {
+        id: "contract-drafting",
         title: "Contract Drafting",
         description:
           "We offer precise and legally sound drafting services to safeguard your business interests.",
@@ -323,6 +326,7 @@ export const servicesData: {
         ],
       },
       {
+        id: "trademark-filing",
         title: "Trademark Filing",
         description:
           "Protecting your brand identity is critical. We provide end-to-end trademark registration and protection services.",

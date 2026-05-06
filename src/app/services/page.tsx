@@ -1,17 +1,34 @@
 // src/app/services/page.tsx
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { Box, Container, Typography, Tabs, Tab, Grid } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { servicesData } from "@/data/servicesData";
 import { ServiceSection } from "@/components/ServiceContent";
 import ServiceTile from "@/components/ServiceTile";
 
-export default function ServicesPage() {
-  const [activeTab, setActiveTab] = useState(0);
+const ServicesContent = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const tabParam = searchParams.get("tab");
+  const initialTab = tabParam ? parseInt(tabParam, 10) : 0;
+
+  const [activeTab, setActiveTab] = useState(initialTab);
+
+  useEffect(() => {
+    if (tabParam) {
+      setActiveTab(parseInt(tabParam, 10));
+    } else {
+      setActiveTab(0);
+    }
+  }, [tabParam]);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setActiveTab(newValue);
+    router.replace(`${pathname}?tab=${newValue}`, { scroll: false });
   };
 
   return (
@@ -69,7 +86,7 @@ export default function ServicesPage() {
                         title={section.title}
                         description={section.description}
                         imageUrl={section.imageUrl || ""}
-                        link={section.link || ""}
+                        link={`/services/${section.title.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase().replace(/^-|-$/g, "")}_${section.id}?tab=${activeTab}`}
                       />
                     </Grid>
                   ))}
@@ -80,5 +97,13 @@ export default function ServicesPage() {
         </AnimatePresence>
       </Container>
     </Box>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={<Box sx={{ pt: 15, pb: 10, bgcolor: "white", minHeight: "100vh" }}><Container maxWidth="lg" /></Box>}>
+      <ServicesContent />
+    </Suspense>
   );
 }
