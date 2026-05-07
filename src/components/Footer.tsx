@@ -20,9 +20,9 @@ import {
 import Link from "next/link";
 
 const quickLinks = [
-  { name: "About Us", href: "/about-us" },
   { name: "Our Services", href: "/services" },
-  { name: "Blogs", href: "/blogs" },
+  { name: "About Us", href: "/about-us" },
+  // { name: "Blogs", href: "/blogs" },
   { name: "Contact Us", href: "/contact-us" },
   { name: "Disclaimer", href: "/disclaimer" },
 ];
@@ -41,13 +41,13 @@ export default function Footer() {
               variant="h5"
               sx={{ fontFamily: "Playfair Display", fontWeight: 700, mb: 2 }}
             >
-              CS Harshit Shah<span style={{ color: "#C9A84C" }}>.</span>
+              {CompanyDetails.proprieter}<span style={{ color: "#C9A84C" }}>.</span>
             </Typography>
             <Typography
               variant="body2"
               sx={{ color: "#6B7280", mb: 3, fontStyle: "italic" }}
             >
-              Precision. Compliance. Growth.
+              {CompanyDetails.tagLine}
             </Typography>
             <Stack direction="row" spacing={1}>
               <IconButton
@@ -153,7 +153,7 @@ export default function Footer() {
           }}
         >
           <Typography variant="caption" sx={{ color: "#6B7280" }}>
-            © {new Date().getFullYear()} [CS Harshit Shah]. All rights reserved.
+            © {new Date().getFullYear()} {CompanyDetails.proprieter}. All rights reserved.
           </Typography>
           <Link href="/disclaimer" style={{ textDecoration: "none" }}>
             <Typography

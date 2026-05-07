@@ -47,7 +47,7 @@ export default async function ServiceDetailsPage({
             </IconButton>
           </Link>
           <Breadcrumbs aria-label="breadcrumb">
-            <Link href="/" passHref>
+            <Link href="/" passHref style={{ textDecoration: "none" }}>
               <Typography
                 sx={{
                   color: "text.secondary",
@@ -58,7 +58,7 @@ export default async function ServiceDetailsPage({
                 Home
               </Typography>
             </Link>
-            <Link href={backLink} passHref>
+            <Link href={backLink} passHref style={{ textDecoration: "none" }}>
               <Typography
                 sx={{
                   color: "text.secondary",
