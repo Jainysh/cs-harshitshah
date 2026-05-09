@@ -31,12 +31,10 @@ export default function HeroCarousel() {
         minHeight: "100vh",
         bgcolor: "#0F2040",
         backgroundImage:
-          "linear-gradient(135deg, rgba(201,168,76,0.05) 25%, transparent 25%)",
-        backgroundSize: {
-          xs: "60px 60px",
-          sm: "80px 80px",
-          md: "100px 100px",
-        },
+          "linear-gradient(rgba(15, 32, 64, 0.7), rgba(15, 32, 64, 0.85)), url('/hero-section/hero-bg.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         display: "flex",
         alignItems: "center",
         color: "white",
