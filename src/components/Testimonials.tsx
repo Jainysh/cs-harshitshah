@@ -3,20 +3,20 @@ import { Box, Container, Typography, Grid } from "@mui/material";
 
 const reviews = [
   {
-    text: "Their understanding of SEBI regulations is unparalleled. They made our compliance transition seamless.",
-    name: "Rajesh Mehta",
-    role: "CEO, FinTech Solutions",
+    text: "Their domain expertise helped us maintain strong governance standards and ensure timely compliance. The team is proactive, detail-oriented, and extremely reliable.",
+    name: "Harsh Patel",
+    role: "Founder, Dream Next Private Limited",
   },
-  {
-    text: "A highly professional team that understands the nuances of Indian Corporate Law.",
-    name: "Anjali Sharma",
-    role: "Legal Head, Global Ventures",
-  },
-  {
-    text: "Transparent, diligent, and always ahead of regulatory deadlines.",
-    name: "Vikram Singh",
-    role: "Founder, WealthGuard AIF",
-  },
+  // {
+  //   text: "A highly professional team that understands the nuances of Indian Corporate Law.",
+  //   name: "Anjali Sharma",
+  //   role: "Legal Head, Global Ventures",
+  // },
+  // {
+  //   text: "Transparent, diligent, and always ahead of regulatory deadlines.",
+  //   name: "Vikram Singh",
+  //   role: "Founder, WealthGuard AIF",
+  // },
 ];
 
 export default function Testimonials() {

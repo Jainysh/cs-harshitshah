@@ -106,36 +106,56 @@ export default function Footer() {
               Contact Us
             </Typography>
             <Stack spacing={2.5}>
-              <Stack
-                direction="row"
-                spacing={2}
-                //   alignItems="center"
+              <Box
+                component="a"
+                href={`tel:${CompanyDetails.phone}`}
+                sx={{
+                  display: "flex",
+                  gap: 2,
+                  textDecoration: "none",
+                  color: "inherit",
+                  "&:hover .MuiTypography-root": { color: "white" },
+                }}
               >
                 <PhoneAndroidOutlined sx={{ fontSize: 18, color: "#C9A84C" }} />
-                <Typography variant="body2" sx={{ color: "#6B7280" }}>
+                <Typography variant="body2" sx={{ color: "#6B7280", transition: "color 0.2s" }}>
                   {CompanyDetails.phone}
                 </Typography>
-              </Stack>
-              <Stack
-                direction="row"
-                spacing={2}
-                //   alignItems="center"
+              </Box>
+              <Box
+                component="a"
+                href={`mailto:${CompanyDetails.email}`}
+                sx={{
+                  display: "flex",
+                  gap: 2,
+                  textDecoration: "none",
+                  color: "inherit",
+                  "&:hover .MuiTypography-root": { color: "white" },
+                }}
               >
                 <MailOutlineOutlined sx={{ fontSize: 18, color: "#C9A84C" }} />
-                <Typography variant="body2" sx={{ color: "#6B7280" }}>
+                <Typography variant="body2" sx={{ color: "#6B7280", transition: "color 0.2s" }}>
                   {CompanyDetails.email}
                 </Typography>
-              </Stack>
-              <Stack
-                direction="row"
-                spacing={2}
-                //   alignItems="flex-start"
+              </Box>
+              <Box
+                component="a"
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CompanyDetails.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  display: "flex",
+                  gap: 2,
+                  textDecoration: "none",
+                  color: "inherit",
+                  "&:hover .MuiTypography-root": { color: "white" },
+                }}
               >
                 <FmdGoodOutlined sx={{ fontSize: 18, color: "#C9A84C" }} />
-                <Typography variant="body2" sx={{ color: "#6B7280" }}>
+                <Typography variant="body2" sx={{ color: "#6B7280", transition: "color 0.2s" }}>
                   {CompanyDetails.address}
                 </Typography>
-              </Stack>
+              </Box>
             </Stack>
           </Grid>
         </Grid>

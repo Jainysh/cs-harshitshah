@@ -17,6 +17,7 @@ const ServicesContent = () => {
   const initialTab = tabParam ? parseInt(tabParam, 10) : 0;
 
   const [activeTab, setActiveTab] = useState(initialTab);
+  const [showAnimation, setShowAnimation] = useState(false);
 
   useEffect(() => {
     if (tabParam) {
@@ -31,25 +32,64 @@ const ServicesContent = () => {
     router.replace(`${pathname}?tab=${newValue}`, { scroll: false });
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowAnimation(true);
+    }, 1000);
+     const timer2 = setTimeout(() => {
+      setShowAnimation(false);
+    }, 3000);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(timer2);
+    };
+  }, []);
+
   return (
-    <Box sx={{ pt: 15, pb: 10, bgcolor: "white", minHeight: "100vh" }}>
+    <Box sx={{ pt: { xs: 12, md: 15 }, pb: { xs: 6, md: 10 }, bgcolor: "white", minHeight: "100vh" }}>
       <Container maxWidth="lg">
-        <Typography variant="h2" sx={{ mb: 6, textAlign: "center" }}>
-          Our Specialized Services
+        <Typography sx={{ mb: { xs: 4, md: 6 },  textAlign: "center", typography: { xs: 'h3', md: 'h2' } }}>
+          <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' }, fontSize: { xs: '2rem', md: 'inherit' } }}>Our Services</Box>
+          <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>Our Specialized Services</Box>
         </Typography>
 
-        <Box sx={{ borderBottom: 1, borderColor: "divider", mb: 6 }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider", mb: { xs: 4, md: 6 } }}>
           <Tabs
             value={activeTab}
             onChange={handleChange}
-            centered
+            variant="scrollable"
+            scrollButtons="auto"
+            allowScrollButtonsMobile
             textColor="secondary"
             indicatorColor="secondary"
             sx={{
               "& .MuiTab-root": {
                 fontWeight: 700,
-                fontSize: "0.9rem",
+                fontSize: { xs: "0.8rem", md: "0.9rem" },
                 letterSpacing: 1,
+              },
+              "& .MuiTabScrollButton-root": {
+                opacity: 1,
+                width: 32,
+                // overflow: "visible",
+                transition: "all 0.3s",
+                ...(showAnimation && {
+                  bgcolor: "rgba(170, 146, 28, 0.3)",
+                  borderRadius: "8px",
+                }),
+                "&.Mui-disabled": {
+                  opacity: 0.2,
+                  bgcolor: "transparent",
+                },
+                "&:not(.Mui-disabled)": {
+                  color: "secondary.main",
+                  animation: showAnimation ? "bounceArrow 1.2s ease-in-out infinite" : "none",
+                },
+              },
+              "@keyframes bounceArrow": {
+                "0%, 100%": { transform: "scale(1) translateX(0)", opacity: 0.75 },
+                "30%": { transform: "scale(1.25) translateX(0)", opacity: 1 },
+                "60%": { transform: "scale(1) translateX(0)", opacity: 0.75 },
               },
             }}
           >
@@ -102,7 +142,7 @@ const ServicesContent = () => {
 
 export default function ServicesPage() {
   return (
-    <Suspense fallback={<Box sx={{ pt: 15, pb: 10, bgcolor: "white", minHeight: "100vh" }}><Container maxWidth="lg" /></Box>}>
+    <Suspense fallback={<Box sx={{ pt: { xs: 12, md: 15 }, pb: { xs: 6, md: 10 }, bgcolor: "white", minHeight: "100vh" }}><Container maxWidth="lg" /></Box>}>
       <ServicesContent />
     </Suspense>
   );

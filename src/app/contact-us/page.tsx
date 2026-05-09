@@ -27,9 +27,9 @@ import { CompanyDetails } from "@/utils/constants";
 
 const countryCodes = [
   { code: "+91", label: "🇮🇳 India" },
-  { code: "+1", label: "🇺🇸 USA" },
-  { code: "+44", label: "🇬🇧 UK" },
-  { code: "+971", label: "🇦🇪 UAE" },
+  // { code: "+1", label: "🇺🇸 USA" },
+  // { code: "+44", label: "🇬🇧 UK" },
+  // { code: "+971", label: "🇦🇪 UAE" },
 ];
 
 export default function ContactUs() {
@@ -75,9 +75,9 @@ export default function ContactUs() {
   };
 
   return (
-    <Box sx={{ pt: 15, pb: 10, bgcolor: "white" }}>
+    <Box sx={{ pt: { xs: 12, md: 15 }, pb: { xs: 6, md: 10 }, bgcolor: "white", minHeight: "100vh" }}>
       <Container maxWidth="lg">
-        <Grid container spacing={8}>
+        <Grid container spacing={{ xs: 6, md: 8 }}>
           {/* Section 1: Let's meet over coffee */}
           <Grid size={{ xs: 12, md: 5 }}>
             <motion.div
@@ -85,20 +85,19 @@ export default function ContactUs() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Typography
-                variant="h3"
-                sx={{ mb: 5, fontFamily: "Playfair Display" }}
-              >
-                Let&apos;s meet over coffee
+              <Typography sx={{ mb: { xs: 4, md: 6 }, textAlign: "center", typography: { xs: 'h3', md: 'h2' } }}>
+                <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' }, fontSize: { xs: '2rem', md: 'inherit' } }}>Let&apos;s meet ☕️</Box>
+                <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>Let&apos;s meet over coffee</Box>
               </Typography>
 
-              <Stack spacing={4}>
+              <Stack spacing={3} sx={{ mt: { xs: 4, md: 6 } }}>
                 <Box
                   component="a"
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CompanyDetails.address)}`}
                   target="_blank"
                   sx={{
                     display: "flex",
+                    alignItems: 'center',
                     gap: 2,
                     textDecoration: "none",
                     color: "inherit",
@@ -117,6 +116,7 @@ export default function ContactUs() {
                   href={`mailto:${CompanyDetails.email}`}
                   sx={{
                     display: "flex",
+                    alignItems: 'center',
                     gap: 2,
                     textDecoration: "none",
                     color: "inherit",
@@ -137,6 +137,7 @@ export default function ContactUs() {
                   href={`tel:${CompanyDetails.phone}`}
                   sx={{
                     display: "flex",
+                    alignItems: 'center',
                     gap: 2,
                     textDecoration: "none",
                     color: "inherit",
@@ -152,7 +153,7 @@ export default function ContactUs() {
                 </Box>
 
                 {/* Socials */}
-                <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
+                <Stack direction="row" spacing={{ xs: 2.5 }} sx={{ pt: { xs: 3, sm: 5 }, justifyContent: { xs: 'space-evenly', sm: 'flex-start' } }}>
                   <IconButton
                     component="a"
                     href={CompanyDetails.whatsapp}
@@ -210,12 +211,14 @@ export default function ContactUs() {
                 }}
               >
                 <Typography
-                  variant="h4"
-                  sx={{ mb: 1, fontFamily: "Playfair Display" }}
+                  variant="h2"
+                  sx={{
+                    mb: 1, fontSize: { xs: '1.7rem', md: '1.5rem' },
+                  }}
                 >
-                  Reach out to us
+                  💡Enquiry? We are here.
                 </Typography>
-                <Typography
+                {/* <Typography
                   variant="body2"
                   sx={{
                     mb: 4,
@@ -225,7 +228,7 @@ export default function ContactUs() {
                   }}
                 >
                   Let&apos;s get to know each other
-                </Typography>
+                </Typography> */}
 
                 <form onSubmit={handleSubmit}>
                   <Grid container spacing={3}>
@@ -255,7 +258,7 @@ export default function ContactUs() {
                     </Grid>
 
                     <Grid size={{ xs: 12, sm: 6 }}>
-                      <Stack direction="row" spacing={1}>
+                      <Stack direction="row" spacing={1} sx={{ alignItems: 'end' }}>
                         <TextField
                           select
                           variant="standard"

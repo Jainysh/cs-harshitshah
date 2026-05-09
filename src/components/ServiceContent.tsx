@@ -15,21 +15,21 @@ export const ServiceSection = ({
   description,
   items,
 }: SectionProps) => (
-  <Box sx={{ mb: 8 }}>
+  <Box sx={{ mb: { xs: 5, md: 8 } }}>
     <Typography
-      variant="h4"
       sx={{
         fontFamily: "Playfair Display",
         mb: 2,
         color: "primary.main",
         borderLeft: "4px solid #C9A84C",
         pl: 2,
+        typography: { xs: "h5", md: "h4" },
       }}
     >
       {title}
     </Typography>
     {subtitle && (
-      <Typography variant="h6" sx={{ mb: 2, color: "text.secondary" }}>
+      <Typography sx={{ mb: 2, color: "text.secondary", typography: { xs: "subtitle1", md: "h6" } }}>
         {subtitle}
       </Typography>
     )}

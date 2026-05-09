@@ -54,14 +54,14 @@ const values = [
 
 export default function AboutUs() {
   return (
-    <Box sx={{ pt: 15, pb: 10, bgcolor: "white" }}>
+    <Box sx={{ pt: { xs: 10, md: 15 }, pb: { xs: 6, md: 10 }, bgcolor: "white" }}>
       <Container maxWidth="lg">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <Typography variant="h2" sx={{ mb: 6, position: "relative" }}>
+          <Typography variant="h2" sx={{ mb: { xs: 4, md: 6 }, fontSize: { xs: "2rem", md: "3.75rem" }, position: "relative" }}>
             Professional Profile
             <Box
               component="span"
@@ -76,7 +76,7 @@ export default function AboutUs() {
           </Typography>
         </motion.div>
 
-        <Grid container spacing={8}>
+        <Grid container spacing={{ xs: 4, md: 8 }}>
           {/* Biography Column */}
           <Grid size={{ xs: 12, md: 7 }}>
             <Typography
@@ -110,7 +110,7 @@ export default function AboutUs() {
                   <Stack
                     direction="row"
                     spacing={1.5}
-                    //   alignItems="flex-start"
+                  //   alignItems="flex-start"
                   >
                     <Box sx={{ color: "secondary.main", mt: 0.5 }}>•</Box>
                     <Typography variant="body2" sx={{ fontWeight: 500 }}>
@@ -126,7 +126,7 @@ export default function AboutUs() {
           <Grid size={{ xs: 12, md: 5 }}>
             <Box
               sx={{
-                p: 6,
+                p: { xs: 3, sm: 4, md: 6 },
                 bgcolor: "background.paper",
                 border: "1px solid #E5E0D8",
                 position: "relative",
@@ -142,8 +142,9 @@ export default function AboutUs() {
                   fontFamily: "Playfair Display",
                   fontStyle: "italic",
                   color: "primary.main",
-                  lineHeight: 1.6,
+                  lineHeight: { xs: 1.4, md: 1.6 },
                   textAlign: "center",
+                  fontSize: { xs: "1.25rem", sm: "1.75rem", md: "1.75rem" }
                 }}
               >
                 “Sustainable business growth is driven not merely by financial
@@ -154,24 +155,25 @@ export default function AboutUs() {
           </Grid>
         </Grid>
 
-        <Divider sx={{ my: 12, borderColor: "#E5E0D8" }} />
+        <Divider sx={{ my: { xs: 6, md: 12 }, borderColor: "#E5E0D8" }} />
 
         {/* Vision & Mission */}
-        <Grid container spacing={6} sx={{ mb: 12 }}>
+        <Grid container spacing={{ xs: 4, md: 6 }} sx={{ mb: { xs: 6, md: 12 }, alignItems: 'center' }}>
           <Grid size={{ xs: 12, md: 6 }}>
-            <Stack direction="row" spacing={3}>
+            <Stack direction="row" spacing={{ xs: 2, md: 3 }} sx={{ alignItems: 'center' }}>
               <Box
                 sx={{
                   bgcolor: "primary.main",
-                  p: 2,
+                  p: { xs: 2.5, md: 3 },
                   color: "white",
-                  height: "fit-content",
+                  display: 'flex',
+                  borderRadius: '12px'
                 }}
               >
-                <VisibilityOutlined />
+                <VisibilityOutlined sx={{ fontSize: { xs: 28, md: 32 } }} />
               </Box>
               <Box>
-                <Typography variant="h4" sx={{ mb: 2 }}>
+                <Typography variant="h4" sx={{ mb: { xs: 1.5, md: 2 }, fontSize: { xs: "1.75rem", md: "2.125rem" } }}>
                   Our Vision
                 </Typography>
                 <Typography variant="body1" color="text.secondary">
@@ -181,20 +183,23 @@ export default function AboutUs() {
               </Box>
             </Stack>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Stack direction="row" spacing={3}>
+          <Grid size={{ xs: 12, md: 6 }} sx={{ borderTop: { xs: "1px solid #AA921C", md: "none" }, pt: { xs: 4, md: 0 } }}>
+            <Stack direction="row" spacing={{ xs: 2, md: 3 }} sx={{ alignItems: 'center' }}>
               <Box
                 sx={{
                   bgcolor: "secondary.main",
-                  p: 2,
+                  p: { xs: 2.5, md: 3 },
                   color: "white",
-                  height: "fit-content",
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: '12px'
                 }}
               >
-                <FlagOutlined />
+                <FlagOutlined sx={{ fontSize: { xs: 28, md: 32 } }} />
               </Box>
               <Box>
-                <Typography variant="h4" sx={{ mb: 2 }}>
+                <Typography variant="h4" sx={{ mb: { xs: 1.5, md: 2 }, fontSize: { xs: "1.75rem", md: "2.125rem" } }}>
                   Our Mission
                 </Typography>
                 <Typography variant="body1" color="text.secondary">
@@ -214,7 +219,7 @@ export default function AboutUs() {
           <Typography
             variant="h3"
             align="center"
-            sx={{ mb: 8, color: "white" }}
+            sx={{ mb: { xs: 4, md: 8 }, fontSize: { xs: "2rem", md: "3rem" }, color: "white" }}
           >
             Our Core Values
           </Typography>

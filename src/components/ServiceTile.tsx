@@ -79,12 +79,12 @@ export default function ServiceTile({
         }}
       >
         <Typography
-          variant="h4"
           sx={{
             color: "white",
             fontFamily: "Playfair Display",
             fontWeight: 600,
             textShadow: "0px 2px 4px rgba(0,0,0,0.3)",
+            typography: { xs: "h5", md: "h4" },
           }}
         >
           {title}
