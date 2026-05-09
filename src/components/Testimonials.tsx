@@ -7,11 +7,11 @@ const reviews = [
     name: "Harsh Patel",
     role: "Founder, Dream Next Private Limited",
   },
-  // {
-  //   text: "A highly professional team that understands the nuances of Indian Corporate Law.",
-  //   name: "Anjali Sharma",
-  //   role: "Legal Head, Global Ventures",
-  // },
+  {
+    text: "I have known Harshit for the past 11 years, and we have worked together on several company law and corporate compliance matters. His expertise in corporate compliances, mergers & amalgamations, shareholders’ agreements, strategic investments, deposit-related issues, and listing compliances is exceptional. He possesses strong commercial understanding and a practical approach towards complex corporate matters. I would highly recommend him for company law, corporate restructuring, and regulatory compliance advisory.",
+    name: "Dhairya Shah",
+    role: "Advocate, IP & Commerical Law",
+  },
   // {
   //   text: "Transparent, diligent, and always ahead of regulatory deadlines.",
   //   name: "Vikram Singh",
