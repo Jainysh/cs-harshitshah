@@ -19,8 +19,8 @@ import { CompanyDetails } from "@/utils/constants";
 
 const navLinks = [
   { text: "Home", href: "/" },
-  { text: "Services", href: "/services" },
   { text: "About Us", href: "/about-us" },
+  { text: "Services", href: "/services" },
   // { text: "Blogs", href: "/blogs" },
   { text: "Contact Us", href: "/contact-us" },
 ];
@@ -74,7 +74,7 @@ export default function Navbar() {
               }}
             >
               {CompanyDetails.proprieter}
-              <span style={{ color: "#C9A84C" }}>.</span>
+              {/* <span style={{ color: "#C9A84C" }}>.</span> */}
             </Typography>
             <Typography
               variant="body2"
@@ -91,20 +91,46 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <Box sx={{ display: { xs: "none", md: "flex" }, gap: 4 }}>
-          {navLinks.map((link) => (
-            <Link key={link.text} href={link.href} passHref>
-              <Typography
-                sx={{
-                  color: scrolled || !isHomePage ? "text.primary" : "white",
-                  fontSize: "0.9rem",
-                  "&:hover": { color: "secondary.main" },
-                  transition: "color 0.2s",
-                }}
+          {navLinks.map((link) => {
+            const isActive =
+              pathname === link.href ||
+              (link.href !== "/" && pathname.startsWith(link.href));
+
+            return (
+              <Link
+                key={link.text}
+                href={link.href}
+                passHref
+                style={{ textDecoration: "none" }}
               >
-                {link.text}
-              </Typography>
-            </Link>
-          ))}
+                <Typography
+                  sx={{
+                    color: scrolled || !isHomePage ? "text.primary" : "white",
+                    fontSize: "0.95rem",
+                    fontWeight: isActive ? 600 : 500,
+                    position: "relative",
+                    "&:hover": { color: "secondary.main" },
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      width: isActive ? "100%" : "0%",
+                      height: "2px",
+                      bottom: "-4px",
+                      left: "0",
+                      backgroundColor: "secondary.main",
+                      transition: "width 0.3s ease-in-out",
+                    },
+                    "&:hover::after": {
+                      width: "100%",
+                    },
+                    transition: "all 0.3s ease-in-out",
+                  }}
+                >
+                  {link.text}
+                </Typography>
+              </Link>
+            )
+          })}
         </Box>
 
         <IconButton

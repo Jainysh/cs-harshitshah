@@ -20,8 +20,8 @@ import {
 import Link from "next/link";
 
 const quickLinks = [
-  { name: "Our Services", href: "/services" },
   { name: "About Us", href: "/about-us" },
+  { name: "Our Services", href: "/services" },
   // { name: "Blogs", href: "/blogs" },
   { name: "Contact Us", href: "/contact-us" },
   { name: "Disclaimer", href: "/disclaimer" },
@@ -41,7 +41,7 @@ export default function Footer() {
               variant="h5"
               sx={{ fontFamily: "Playfair Display", fontWeight: 700, mb: 2 }}
             >
-              {CompanyDetails.proprieter}<span style={{ color: "#C9A84C" }}>.</span>
+              {CompanyDetails.proprieter}
             </Typography>
             <Typography
               variant="body2"

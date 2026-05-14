@@ -73,7 +73,7 @@ export default function WhoWeAre() {
           </Grid>
 
           {/* RIGHT STATS */}
-          <Grid size={{ xs: 12, md: 5 }}>
+          {/* <Grid size={{ xs: 12, md: 5 }}>
             <Stack spacing={{ xs: 2, md: 3 }}>
               {stats.map((stat, i) => (
                 <motion.div
@@ -120,7 +120,7 @@ export default function WhoWeAre() {
                 </motion.div>
               ))}
             </Stack>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </Box>
