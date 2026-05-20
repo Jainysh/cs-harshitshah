@@ -69,7 +69,7 @@ export const ServiceSection = ({
             </Stack>
           ) : (
             <Box>
-              <Typography variant="body2" sx={{ fontWeight: 500, mb: 1 }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 1, color: "primary.main" }}>
                 {item.label}
               </Typography>
               <Stack direction="column" spacing={1} sx={{ pl: 3 }}>
