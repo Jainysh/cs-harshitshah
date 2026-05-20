@@ -31,7 +31,7 @@ export default function HeroCarousel() {
         minHeight: "100vh",
         bgcolor: "#0F2040",
         backgroundImage:
-          "linear-gradient(rgba(15, 32, 64, 0.7), rgba(15, 32, 64, 0.85)), url('/hero-section/hero-bg.webp')",
+          "linear-gradient(rgba(15, 32, 64, 0.7), rgba(15, 32, 64, 0.85)), url('/hero-section/hero-bg-laptop.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

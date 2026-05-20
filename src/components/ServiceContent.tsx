@@ -19,20 +19,31 @@ export const ServiceSection = ({
     <Typography
       sx={{
         fontFamily: "Playfair Display",
-        mb: 2,
+        mb: 3,
         color: "primary.main",
-        borderLeft: "4px solid #C9A84C",
-        pl: 2,
         typography: { xs: "h5", md: "h4" },
+        fontWeight: 600,
+        position: "relative",
       }}
     >
       {title}
+      <Box
+        component="span"
+        sx={{
+          display: "block",
+          width: 60,
+          height: 4,
+          bgcolor: "secondary.main",
+          mt: 1.5,
+          borderRadius: 1,
+        }}
+      />
     </Typography>
-    {subtitle && (
+    {/* {subtitle && (
       <Typography sx={{ mb: 2, color: "text.secondary", typography: { xs: "subtitle1", md: "h6" } }}>
         {subtitle}
       </Typography>
-    )}
+    )} */}
     <Typography
       variant="body1"
       sx={{ mb: 3, color: "text.secondary", maxWidth: "800px" }}

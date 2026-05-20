@@ -89,7 +89,7 @@ export default function AboutUs() {
               }}
             >
               {CompanyDetails.proprieter} is a Qualified Company Secretary and
-              Commerce Graduate from the University of Ahmedabad, bringing over
+              Commerce Graduate from the University of Gujarat, bringing over
               a decade of extensive experience in Corporate Laws, SEBI
               Regulations, and Strategic Business Advisory.
             </Typography>
@@ -104,16 +104,43 @@ export default function AboutUs() {
             <Typography variant="h5" sx={{ mb: 3, fontWeight: 700 }}>
               Areas of Expertise
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={{ xs: 2, sm: 3 }}>
               {expertise.map((item, index) => (
                 <Grid size={{ xs: 12, sm: 6 }} key={index}>
                   <Stack
                     direction="row"
                     spacing={1.5}
-                  //   alignItems="flex-start"
+                    sx={{
+                      p: { xs: 1.5, sm: 2 },
+                      border: "1px solid",
+                      borderColor: "divider",
+                      borderRadius: 2,
+                      height: "100%",
+                      transition: "all 0.2s ease-in-out",
+                      "&:hover": {
+                        borderColor: "secondary.main",
+                        bgcolor: "rgba(170, 146, 28, 0.04)",
+                        transform: "translateY(-2px)"
+                      },
+                      alignItems: 'flex-start'
+                    }}
                   >
-                    <Box sx={{ color: "secondary.main", mt: 0.5 }}>•</Box>
-                    <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                    <CheckCircleOutlineOutlined
+                      sx={{
+                        color: "secondary.main",
+                        fontSize: 22,
+                        mt: 0.2,
+                        flexShrink: 0
+                      }}
+                    />
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        fontWeight: 500,
+                        color: "text.primary",
+                        lineHeight: 1.5
+                      }}
+                    >
                       {item}
                     </Typography>
                   </Stack>

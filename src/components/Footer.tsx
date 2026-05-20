@@ -37,12 +37,26 @@ export default function Footer() {
         <Grid container spacing={6}>
           {/* Column 1: Brand */}
           <Grid size={{ xs: 12, md: 4 }}>
-            <Typography
-              variant="h5"
-              sx={{ fontFamily: "Playfair Display", fontWeight: 700, mb: 2 }}
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+                mb: 2,
+              }}
             >
-              {CompanyDetails.proprieter}
-            </Typography>
+              <img
+                src="/logo.png"
+                alt="Logo"
+                style={{ height: 32, marginRight: 4 }}
+              />
+              <Typography
+                variant="h5"
+                sx={{ fontFamily: "Playfair Display", fontWeight: 700 }}
+              >
+                {CompanyDetails.proprieter}
+              </Typography>
+            </Box>
             <Typography
               variant="body2"
               sx={{ color: "#6B7280", mb: 3, fontStyle: "italic" }}
@@ -160,14 +174,14 @@ export default function Footer() {
           </Grid>
         </Grid>
 
-        <Divider sx={{ my: 6, borderColor: "rgba(229, 224, 216, 0.1)" }} />
+        <Divider sx={{ my: 4, borderColor: "rgba(229, 224, 216, 0.1)" }} />
 
         {/* Bottom Bar */}
         <Box
           sx={{
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            justifyContent: "space-between",
+            justifyContent: "center",
             alignItems: "center",
             gap: 2,
           }}
@@ -175,14 +189,14 @@ export default function Footer() {
           <Typography variant="caption" sx={{ color: "#6B7280" }}>
             © {new Date().getFullYear()} {CompanyDetails.proprieter}. All rights reserved.
           </Typography>
-          <Link href="/disclaimer" style={{ textDecoration: "none" }}>
+          {/* <Link href="/disclaimer" style={{ textDecoration: "none" }}>
             <Typography
               variant="caption"
               sx={{ color: "#6B7280", "&:hover": { color: "white" } }}
             >
               Disclaimer
             </Typography>
-          </Link>
+          </Link> */}
         </Box>
       </Container>
     </Box>

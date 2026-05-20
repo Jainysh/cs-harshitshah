@@ -2,32 +2,38 @@
 import { Box, Container, Typography, Grid, Paper } from "@mui/material";
 import { motion } from "framer-motion";
 import {
-  AssessmentOutlined,
   BalanceOutlined,
-  GppGoodOutlined,
-  HandshakeOutlined,
+  BusinessCenterOutlined,
+  WorkspacePremiumOutlined,
+  VerifiedUserOutlined,
+  AccessTimeOutlined,
+  DesignServicesOutlined,
 } from "@mui/icons-material";
 
 const reasons = [
   {
-    icon: <AssessmentOutlined sx={{ fontSize: { xs: 28, md: 32 } }} />,
-    title: "Expert-Led Practice",
-    desc: "Guided by a qualified CS with 10+ years of hands-on regulatory experience.",
+    icon: <BusinessCenterOutlined sx={{ fontSize: { xs: 28, md: 32 } }} />,
+    title: "One-Stop solution for all your compliance needs",
   },
   {
     icon: <BalanceOutlined sx={{ fontSize: { xs: 28, md: 32 } }} />,
-    title: "Regulatory Precision",
-    desc: "Deep expertise in SEBI, MCA, and corporate law frameworks.",
+    title: "Strong Regulatory Expertise",
   },
   {
-    icon: <HandshakeOutlined sx={{ fontSize: { xs: 28, md: 32 } }} />,
-    title: "Client-First Approach",
-    desc: "Tailored solutions aligned with your business goals.",
+    icon: <WorkspacePremiumOutlined sx={{ fontSize: { xs: 28, md: 32 } }} />,
+    title: "Experienced Professional Guidance",
   },
   {
-    icon: <GppGoodOutlined sx={{ fontSize: { xs: 28, md: 32 } }} />,
-    title: "Integrity & Independence",
-    desc: "Unbiased advisory, free from conflicts of interest.",
+    icon: <VerifiedUserOutlined sx={{ fontSize: { xs: 28, md: 32 } }} />,
+    title: "End-to-End Compliance Support",
+  },
+  {
+    icon: <AccessTimeOutlined sx={{ fontSize: { xs: 28, md: 32 } }} />,
+    title: "Timely Execution",
+  },
+  {
+    icon: <DesignServicesOutlined sx={{ fontSize: { xs: 28, md: 32 } }} />,
+    title: "Customized Solutions",
   },
 ];
 
@@ -48,8 +54,8 @@ export default function WhyChooseUs() {
 
         <Grid container spacing={{ xs: 2, md: 4 }}>
           {reasons.map((item, i) => (
-            <Grid size={{ xs: 12, sm: 6 }} key={i}>
-              <motion.div whileHover={{ y: -5 }}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={i}>
+              <motion.div whileHover={{ y: -5 }} style={{ height: "100%" }}>
                 <Paper
                   sx={{
                     p: { xs: 2.5, md: 4 },
@@ -59,6 +65,10 @@ export default function WhyChooseUs() {
                     boxShadow: "0 4px 20px rgba(0,0,0,0.03)",
                     border: "1px solid #E5E0D8",
                     borderLeft: { md: "4px solid #C9A84C" },
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    cursor: "pointer"
                   }}
                 >
                   <Box sx={{ color: "secondary.main", mb: 2 }}>{item.icon}</Box>
@@ -66,14 +76,11 @@ export default function WhyChooseUs() {
                   <Typography
                     variant="h6"
                     sx={{
-                      fontWeight: 700,
-                      mb: 1,
+                      fontWeight: 600,
+                      fontSize: "1.1rem"
                     }}
                   >
                     {item.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {item.desc}
                   </Typography>
                 </Paper>
               </motion.div>

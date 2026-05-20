@@ -11,7 +11,7 @@ import Link from "next/link";
 const services = [
   {
     title: "SEBI Regulatory Advisory",
-    desc: "Expert guidance for AIF, PMS, and Investment Advisers.",
+    desc: "Expert guidance for AIF, PMS, Research Analysts and Investment Advisers.",
     size: 6,
     link: '/services?tab=0',
     icon: (
@@ -22,7 +22,7 @@ const services = [
   },
   {
     title: "Corporate Law",
-    desc: "Full-cycle secretarial support.",
+    desc: "End to end compliance support for any size & type of company.",
     size: 6,
     link: '/services?tab=1',
     icon: (
