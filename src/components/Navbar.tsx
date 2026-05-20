@@ -19,7 +19,7 @@ import { CompanyDetails } from "@/utils/constants";
 
 const navLinks = [
   { text: "Home", href: "/" },
-  { text: "About Us", href: "/about-us" },
+  { text: "About Us", href: "/about" },
   { text: "Services", href: "/services" },
   // { text: "Blogs", href: "/blogs" },
   { text: "Contact Us", href: "/contact-us" },
