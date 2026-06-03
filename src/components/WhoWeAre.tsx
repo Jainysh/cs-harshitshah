@@ -1,19 +1,13 @@
 // src/components/WhoWeAre.tsx
 "use client";
-import { Box, Container, Grid, Typography, Stack } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-
-const stats = [
-  { label: "Years Experience", value: "10+" },
-  { label: "Clients Served", value: "50+" },
-  { label: "Practice Areas", value: "4" },
-];
 
 export default function WhoWeAre() {
   return (
     <Box
       sx={{
-        py: { xs: 6, sm: 8, md: 12 },
+        py: { xs: 6, sm: 8, md: 10 },
         px: { xs: 2, sm: 3 },
         bgcolor: "background.paper",
         position: "relative",
@@ -26,7 +20,7 @@ export default function WhoWeAre() {
           sx={{ alignItems: "center" }}
         >
           {/* LEFT CONTENT */}
-          <Grid size={{ xs: 12, md: 7 }}>
+          <Grid size={{ xs: 12, lg: 7 }}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -72,55 +66,28 @@ export default function WhoWeAre() {
             </motion.div>
           </Grid>
 
-          {/* RIGHT STATS */}
-          {/* <Grid size={{ xs: 12, md: 5 }}>
-            <Stack spacing={{ xs: 2, md: 3 }}>
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Box
-                    sx={{
-                      p: { xs: 2, sm: 2.5, md: 3 },
-                      border: "1px solid #E5E0D8",
-                      bgcolor: "white",
-                      display: "flex",
-                      flexDirection: { xs: "column", sm: "row" },
-                      justifyContent: "space-between",
-                      alignItems: { xs: "flex-start", sm: "center" },
-                      gap: { xs: 1, sm: 0 },
-                    }}
-                  >
-                    <Typography
-                      variant="h4"
-                      sx={{
-                        color: "secondary.main",
-                        fontWeight: 700,
-                        fontSize: { xs: "1.5rem", md: "2rem" },
-                      }}
-                    >
-                      {stat.value}
-                    </Typography>
-
-                    <Typography
-                      variant="subtitle1"
-                      sx={{
-                        fontWeight: 600,
-                        color: "primary.main",
-                        fontSize: { xs: "0.9rem", md: "1rem" },
-                      }}
-                    >
-                      {stat.label}
-                    </Typography>
-                  </Box>
-                </motion.div>
-              ))}
-            </Stack>
-          </Grid> */}
+          {/* RIGHT IMAGE — desktop only */}
+          <Grid
+            size={{ xs: 12, lg: 5 }}
+            sx={{ display: { xs: "none", lg: "block" } }}
+          >
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <img
+                src="/homepage/who-we-are.webp"
+                alt="Who We Are"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  borderRadius: "8px",
+                }}
+              />
+            </motion.div>
+          </Grid>
         </Grid>
       </Container>
     </Box>

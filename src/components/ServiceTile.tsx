@@ -63,7 +63,7 @@ export default function ServiceTile({
           right: 0,
           bottom: 0,
           background:
-            "linear-gradient(to top, rgba(15, 32, 64, 0.95) 0%, rgba(15, 32, 64, 0.4) 50%, rgba(15, 32, 64, 0.1) 100%)",
+            "linear-gradient(to top, rgba(15, 32, 64, 1) 0%, rgba(15, 32, 64, 0.85) 40%, rgba(15, 32, 64, 0.3) 70%, rgba(15, 32, 64, 0.05) 100%)",
           zIndex: 2,
         }}
       />
