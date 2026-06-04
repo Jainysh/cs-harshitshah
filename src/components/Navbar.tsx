@@ -30,7 +30,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
-  const isHomePage = pathname === "/";
+  const hasDarkBg = pathname === "/" || pathname === "/contact-us";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -68,7 +68,7 @@ export default function Navbar() {
             <Typography
               variant="h5"
               sx={{
-                color: scrolled || !isHomePage ? "primary.main" : "white",
+                color: scrolled || !hasDarkBg ? "primary.main" : "white",
                 fontFamily: "Playfair Display",
                 fontWeight: 700,
               }}
@@ -105,7 +105,7 @@ export default function Navbar() {
               >
                 <Typography
                   sx={{
-                    color: scrolled || !isHomePage ? "text.primary" : "white",
+                    color: scrolled || !hasDarkBg ? "text.primary" : "white",
                     fontSize: "0.95rem",
                     fontWeight: isActive ? 600 : 500,
                     position: "relative",
@@ -136,7 +136,7 @@ export default function Navbar() {
         <IconButton
           sx={{
             display: { md: "none" },
-            color: scrolled || !isHomePage ? "primary.main" : "white",
+            color: scrolled || !hasDarkBg ? "primary.main" : "white",
           }}
           onClick={() => setMobileOpen(true)}
         >

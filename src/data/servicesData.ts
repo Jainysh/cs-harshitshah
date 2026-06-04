@@ -16,7 +16,7 @@ export const servicesData: {
       {
         id: "investment-advisers-ia",
         title: "Investment Advisers (IA)",
-        imageUrl: "/services/ia.jpeg",
+        imageUrl: "/services/ia.webp",
         subTitle: "(As per SEBI (Investment Advisers) Regulations, 2013)",
         description:
           "Investment Advisers (IAs) are SEBI-registered entity who provides personalized investment advice to clients for a fee; we assist them with seamless registration, robust compliance frameworks, and ongoing regulatory support to ensure fully compliant and efficient operations.",
@@ -65,7 +65,7 @@ export const servicesData: {
         id: "research-analyst-ra",
         title: "Research Analyst (RA)",
         subTitle: "(As per SEBI (Research Analysts) Regulations, 2014)",
-        imageUrl: "/services/ra.jpg",
+        imageUrl: "/services/ra.webp",
         description:
           "Research Analysts (RAs) are SEBI-registered entity who prepares and publish research reports or investment recommendations; we support them with smooth registration, robust compliance frameworks, and ongoing regulatory guidance to ensure accurate, transparent, and compliant research operations",
         items: [
@@ -112,7 +112,7 @@ export const servicesData: {
         id: "portfolio-management-services-pms",
         title: "Portfolio Management Services (PMS)",
         subTitle: "(As per SEBI (Portfolio Managers) Regulations, 2020)",
-        imageUrl: "/services/pms.jpg",
+        imageUrl: "/services/pms.webp",
         description:
           "Portfolio Managers (PMS) are SEBI-registered entity who manages investment portfolios on behalf of clients under discretionary or non-discretionary mandates; we assist them with seamless registration, strong compliance and operational frameworks, and ongoing regulatory support to ensure efficient and fully compliant portfolio management operations.",
         items: [
@@ -152,7 +152,7 @@ export const servicesData: {
       {
         id: "alternative-investment-funds-aif",
         title: "Alternative Investment Funds (AIF)",
-        imageUrl: "/services/aif.jpg",
+        imageUrl: "/services/aif.webp",
         subTitle:
           "(As per SEBI (Alternative Investment Funds) Regulations, 2012)",
         description:
@@ -207,7 +207,7 @@ export const servicesData: {
       {
         id: "company-llp-formation",
         title: "Company / LLP Formation",
-        imageUrl: "/services/company-formation.jpg",
+        imageUrl: "/services/company-formation.webp",
         description:
           "We provide end-to-end support for setting up business entities tailored to your strategic and operational needs.",
         items: [
@@ -223,7 +223,7 @@ export const servicesData: {
         title: "Corporate & Secretarial Services",
         description:
           "Our corporate governance services ensure that your entity remains compliant, organized, and audit-ready at all times.",
-        imageUrl: "/services/corporate-secretarial.jpg",
+        imageUrl: "/services/corporate-secretarial.webp",
         items: [
           "ROC filings and regulatory compliance management",
           "Maintenance of statutory registers and records",
@@ -237,7 +237,7 @@ export const servicesData: {
         title: "Corporate Transactions",
         description:
           "We provide transaction advisory and execution support for key corporate actions.",
-        imageUrl: "/services/corporate-transactions.jpg",
+        imageUrl: "/services/corporate-transactions.webp",
         items: [
           "Private Placement of securities",
           "Rights Issue and Bonus Issue",
@@ -249,7 +249,7 @@ export const servicesData: {
       {
         id: "fundraising-support",
         title: "Fundraising Support",
-        imageUrl: "/services/fundraising.jpg",
+        imageUrl: "/services/fundraising.webp",
         description:
           "We assist businesses in raising capital efficiently while ensuring legal and regulatory compliance.",
         items: [
@@ -263,7 +263,7 @@ export const servicesData: {
       {
         id: "strike-off-winding-up",
         title: "Strike Off & Winding Up",
-        imageUrl: "/services/strike-off.jpg",
+        imageUrl: "/services/strike-off.webp",
         description:
           "We provide structured and compliant closure solutions for companies and LLPs.",
         items: [
