@@ -75,26 +75,8 @@ export default function ContactUs() {
   };
 
   return (
-    <Box
-      sx={{
-        pt: { xs: 12, md: 15 },
-        pb: { xs: 6, md: 10 },
-        minHeight: "100vh",
-        position: "relative",
-        backgroundImage: "url(/homepage/contact-bg.webp)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          inset: 0,
-          background:
-            "linear-gradient(135deg, rgba(15,32,64,0.78) 0%, rgba(15,32,64,0.65) 60%, rgba(15,32,64,0.55) 100%)",
-          zIndex: 0,
-        },
-      }}
-    >
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+    <Box sx={{ pt: { xs: 12, md: 15 }, pb: { xs: 6, md: 10 }, bgcolor: "white", minHeight: "100vh" }}>
+      <Container maxWidth="lg">
         <Grid container spacing={{ xs: 6, md: 8 }}>
           {/* Section 1: Let's meet over coffee */}
           <Grid size={{ xs: 12, md: 5 }}>
@@ -103,29 +85,9 @@ export default function ContactUs() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Typography
-                sx={{
-                  mb: { xs: 4, md: 6 },
-                  textAlign: "center",
-                  typography: { xs: "h3", md: "h2" },
-                  color: "white",
-                }}
-              >
-                <Box
-                  component="span"
-                  sx={{
-                    display: { xs: "inline", sm: "none" },
-                    fontSize: { xs: "2rem", md: "inherit" },
-                  }}
-                >
-                  Let&apos;s meet ☕️
-                </Box>
-                <Box
-                  component="span"
-                  sx={{ display: { xs: "none", sm: "inline" } }}
-                >
-                  Let&apos;s meet over coffee
-                </Box>
+              <Typography sx={{ mb: { xs: 4, md: 6 }, textAlign: "center", typography: { xs: 'h3', md: 'h2' } }}>
+                <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' }, fontSize: { xs: '2rem', md: 'inherit' } }}>Let&apos;s meet ☕️</Box>
+                <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>Let&apos;s meet over coffee</Box>
               </Typography>
 
               <Stack spacing={3} sx={{ mt: { xs: 4, md: 6 } }}>
@@ -135,21 +97,15 @@ export default function ContactUs() {
                   target="_blank"
                   sx={{
                     display: "flex",
-                    alignItems: "center",
+                    alignItems: 'center',
                     gap: 2,
                     textDecoration: "none",
                     color: "inherit",
-                    "&:hover p": { color: "#C9A84C" },
+                    "&:hover p": { color: "secondary.main" },
                   }}
                 >
                   <FmdGoodOutlined sx={{ fontSize: 24, color: "#C9A84C" }} />
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      transition: "color 0.2s",
-                      color: "rgba(255,255,255,0.85)",
-                    }}
-                  >
+                  <Typography variant="body1" sx={{ transition: "color 0.2s" }}>
                     {CompanyDetails.address}
                   </Typography>
                 </Box>
@@ -160,20 +116,17 @@ export default function ContactUs() {
                   href={`mailto:${CompanyDetails.email}`}
                   sx={{
                     display: "flex",
-                    alignItems: "center",
+                    alignItems: 'center',
                     gap: 2,
                     textDecoration: "none",
                     color: "inherit",
-                    "&:hover p": { color: "#C9A84C" },
+                    "&:hover p": { color: "secondary.main" },
                   }}
                 >
                   <MailOutlineOutlined
                     sx={{ fontSize: 24, color: "#C9A84C" }}
                   />
-                  <Typography
-                    variant="body1"
-                    sx={{ color: "rgba(255,255,255,0.85)" }}
-                  >
+                  <Typography variant="body1">
                     {CompanyDetails.email}
                   </Typography>
                 </Box>
@@ -184,42 +137,31 @@ export default function ContactUs() {
                   href={`tel:${CompanyDetails.phone}`}
                   sx={{
                     display: "flex",
-                    alignItems: "center",
+                    alignItems: 'center',
                     gap: 2,
                     textDecoration: "none",
                     color: "inherit",
-                    "&:hover p": { color: "#C9A84C" },
+                    "&:hover p": { color: "secondary.main" },
                   }}
                 >
                   <PhoneAndroidOutlined
                     sx={{ fontSize: 24, color: "#C9A84C" }}
                   />
-                  <Typography
-                    variant="body1"
-                    sx={{ color: "rgba(255,255,255,0.85)" }}
-                  >
+                  <Typography variant="body1">
                     {CompanyDetails.phone}
                   </Typography>
                 </Box>
 
                 {/* Socials */}
-                <Stack
-                  direction="row"
-                  spacing={{ xs: 2.5 }}
-                  sx={{
-                    pt: { xs: 3, sm: 5 },
-                    justifyContent: { xs: "space-evenly", sm: "flex-start" },
-                  }}
-                >
+                <Stack direction="row" spacing={{ xs: 2.5 }} sx={{ pt: { xs: 3, sm: 5 }, justifyContent: { xs: 'space-evenly', sm: 'flex-start' } }}>
                   <IconButton
                     component="a"
                     href={CompanyDetails.whatsapp}
                     target="_blank"
                     sx={{
-                      bgcolor: "rgba(255,255,255,0.12)",
+                      bgcolor: "primary.main",
                       color: "white",
-                      border: "1px solid rgba(255,255,255,0.25)",
-                      "&:hover": { bgcolor: "#C9A84C", borderColor: "#C9A84C" },
+                      "&:hover": { bgcolor: "secondary.main" },
                     }}
                   >
                     <WhatsApp />
@@ -229,10 +171,9 @@ export default function ContactUs() {
                     href={CompanyDetails.linkedIn}
                     target="_blank"
                     sx={{
-                      bgcolor: "rgba(255,255,255,0.12)",
+                      bgcolor: "primary.main",
                       color: "white",
-                      border: "1px solid rgba(255,255,255,0.25)",
-                      "&:hover": { bgcolor: "#C9A84C", borderColor: "#C9A84C" },
+                      "&:hover": { bgcolor: "secondary.main" },
                     }}
                   >
                     <LinkedIn />
@@ -242,10 +183,9 @@ export default function ContactUs() {
                     href={CompanyDetails.twitter}
                     target="_blank"
                     sx={{
-                      bgcolor: "rgba(255,255,255,0.12)",
+                      bgcolor: "primary.main",
                       color: "white",
-                      border: "1px solid rgba(255,255,255,0.25)",
-                      "&:hover": { bgcolor: "#C9A84C", borderColor: "#C9A84C" },
+                      "&:hover": { bgcolor: "secondary.main" },
                     }}
                   >
                     <X />
@@ -273,8 +213,7 @@ export default function ContactUs() {
                 <Typography
                   variant="h2"
                   sx={{
-                    mb: 1,
-                    fontSize: { xs: "1.7rem", md: "1.5rem" },
+                    mb: 1, fontSize: { xs: '1.7rem', md: '1.5rem' },
                   }}
                 >
                   💡Enquiry? We are here.
@@ -319,11 +258,7 @@ export default function ContactUs() {
                     </Grid>
 
                     <Grid size={{ xs: 12, sm: 6 }}>
-                      <Stack
-                        direction="row"
-                        spacing={1}
-                        sx={{ alignItems: "end" }}
-                      >
+                      <Stack direction="row" spacing={1} sx={{ alignItems: 'end' }}>
                         <TextField
                           select
                           variant="standard"

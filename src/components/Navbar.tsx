@@ -30,7 +30,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
-  const hasDarkBg = pathname === "/" || pathname === "/contact-us";
+  const hasDarkBg = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -129,7 +129,7 @@ export default function Navbar() {
                   {link.text}
                 </Typography>
               </Link>
-            )
+            );
           })}
         </Box>
 
@@ -155,7 +155,12 @@ export default function Navbar() {
           </IconButton>
           <List>
             {navLinks.map((link) => (
-              <Link key={link.text} href={link.href} passHref style={{ textDecoration: "none", color: "inherit" }}>
+              <Link
+                key={link.text}
+                href={link.href}
+                passHref
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
                 <ListItem onClick={() => setMobileOpen(false)}>
                   <ListItemText primary={link.text} />
                 </ListItem>
